@@ -8,10 +8,6 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 include(micropython-common)
-include(pico_wireless/micropython)
-
-# C++ Magic Memory
-include(cppmem/micropython)
 function(enable_ulab)
     include(ulab/code/micropython)
 target_compile_definitions(usermod_ulab INTERFACE
@@ -60,3 +56,7 @@ NDARRAY_HAS_BINARY_OP_ADD=1
     )
 endfunction()
 enable_ulab()
+include(pico_wireless/micropython)
+
+# C++ Magic Memory
+include(cppmem/micropython)
