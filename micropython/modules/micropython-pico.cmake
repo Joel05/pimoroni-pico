@@ -7,9 +7,27 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/../../")
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
-include(micropython-common-ulab)
+#Essential
+include(pimoroni_i2c/micropython)
+include(pimoroni_bus/micropython)
 
-include(pico_wireless/micropython)
+# Pico Graphics Essential
+include(hershey_fonts/micropython)
+include(bitmap_fonts/micropython)
+include(picographics/micropython)
+
+# Pico Graphics Extra
+include(jpegdec/micropython)
+include(qrcode/micropython/micropython)
+
+# Utility
+include(adcfft/micropython)
+
+# ULAB
+include(micropython-common-ulab)
+enable_ulab()
+
+include(modules_py/modules_py)
 
 # C++ Magic Memory
 include(cppmem/micropython)
